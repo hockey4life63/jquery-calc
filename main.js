@@ -1,5 +1,41 @@
 
 // $(document).ready(function(){
+    
+$('.number').on('click', function() {
+
+    if(calc.state === 0) {
+
+        calc.firstNumber += $(this).attr('value');
+        calc.updateDisplay('num1');
+
+        console.log('mystring ' + calc.firstNumber);
+
+    } else if (calc.state === 1) {
+
+        calc.secondNumber += $(this).attr('value');
+        calc.updateDisplay('num2');
+
+        console.log('mystring ' + calc.secondNumber);
+    }
+});
+
+    $('.operator').on('click', function() {
+        calc.operatorStored += $(this).attr('value');
+        calc.state = 1;
+        calc.updateDisplay('op');
+    })
+
+    $('.button-equal').on('click', function() {
+        calc.calculateTotal();
+        calc.updateDisplay('res');
+    })
+
+    $('.button-clear').on('click', function() {
+        calc.clearData();
+    })
+
+
+
     var calc = {
         firstNumber : "",
         secondNumber : "",
