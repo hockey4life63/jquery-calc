@@ -1,8 +1,8 @@
-$(document).ready(function(){
-    var calc ={
+// $(document).ready(function(){
+    var calc = {
         firstNumber : "",
         secondNmber : "",
-        operatorStored : "";
+        operatorStored : "",
         state : 0,
         res : 0,
         opConvservion :{
@@ -11,8 +11,8 @@ $(document).ready(function(){
             times: "*",
             divide:"/",
             power: "^"
-        }
-        updateDisplay :function(){
+        },
+        updateDisplay : function() {
             /*updates based on state
             0= first number update
             1= second number update
@@ -32,14 +32,20 @@ $(document).ready(function(){
             };
 
         },
-        function clearData(){
-
-        },
-        function storeNumber(number){
+        clearData :function(){
+            this.firstNumber = "";
+            this.secondNmber = "";
+            this.operatorStored = "";
+            this.state = 0;
+            this.res = 0;
+            $("#first-number").empty();
+            $("#second-number").empty();
+            $("#operator").empty();
+            $("#result").empty();
 
         }
     };
 
 
 
-});
+// });
