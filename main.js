@@ -25,12 +25,12 @@ $('.number').on('click', function() {
         calc.updateDisplay('op');
     })
 
-    $('.button-equal').on('click', function() {
+    $('#button-equal').on('click', function() {
         calc.calculateTotal();
         calc.updateDisplay('res');
     })
 
-    $('.button-clear').on('click', function() {
+    $('#button-clear').on('click', function() {
         calc.clearData();
     })
 
@@ -41,7 +41,7 @@ $('.number').on('click', function() {
         secondNumber : "",
         operatorStored : "",
         state : 0,
-        res : 0,
+        total : 0,
         opConversion :{
             minus: "-",
             plus: "+",
@@ -65,7 +65,7 @@ $('.number').on('click', function() {
                 $("#second-number").html(this.secondNumber);
             }
             else if (arg === 'res') {
-                $("#result").html(this.res);
+                $("#result").html(this.total);
             };
 
         },
@@ -74,7 +74,7 @@ $('.number').on('click', function() {
             this.secondNumber = "";
             this.operatorStored = "";
             this.state = 0;
-            this.res = 0;
+            this.total = 0;
             $("#first-number").empty();
             $("#second-number").empty();
             $("#operator").empty();
