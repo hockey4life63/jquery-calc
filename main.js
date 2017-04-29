@@ -1,40 +1,40 @@
 // $(document).ready(function(){
     var calc = {
         firstNumber : "",
-        secondNmber : "",
+        secondNumber : "",
         operatorStored : "",
         state : 0,
         res : 0,
-        opConvservion :{
+        opConversion :{
             minus: "-",
             plus: "+",
             times: "*",
             divide:"/",
             power: "^"
         },
-        updateDisplay : function() {
+        updateDisplay : function(arg) {
             /*updates based on state
-            0= first number update
-            1= second number update
-            2= operator update
-            3= result update*/
-            if(this.state === 0){
+            'num1' update first num
+            'num2'= second number update
+            'op'= operator update
+            'res'= result update*/
+            if(arg === 'num1'){
                 $("#first-number").html(this.firstNumber);
             }
-            else if(this.state === 1){
-                $("#operatior").html(this.opConvservion[operatorStored]);
+            else if(arg === 'op'){
+                $("#operator").html(this.opConversion[this.operatorStored]);
             }
-            else if(this.state === 2){
-                $("#second-number").html(this.secondNmber);
+            else if(arg === 'num2'){
+                $("#second-number").html(this.secondNumber);
             }
-            else if (this.state === 3) {
+            else if (arg === 'res') {
                 $("#result").html(this.res);
             };
 
         },
         clearData :function(){
             this.firstNumber = "";
-            this.secondNmber = "";
+            this.secondNumber = "";
             this.operatorStored = "";
             this.state = 0;
             this.res = 0;
