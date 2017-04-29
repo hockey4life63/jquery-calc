@@ -20,6 +20,7 @@ $('.number').on('click', function() {
 });
 
     $('.operator').on('click', function() {
+        if(calc.state !== 0)return;
         calc.operatorStored += $(this).attr('value');
         calc.state = 1;
         calc.updateDisplay('op');
@@ -27,6 +28,7 @@ $('.number').on('click', function() {
 
     $('#button-equal').on('click', function() {
         calc.calculateTotal();
+        calc.state =2;
         calc.updateDisplay('res');
     })
 
